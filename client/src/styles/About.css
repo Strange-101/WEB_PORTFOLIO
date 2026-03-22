@@ -1,0 +1,110 @@
+.about {
+  position: relative;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 36px 140px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 32px 32px 0 0;
+  margin-top: -32px;
+  z-index: 3;
+}
+
+/* ---- Cloud Landscape ---- */
+.cloud-landscape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65%;
+  overflow: hidden;
+}
+
+.pxc {
+  position: absolute;
+  animation: cloudDrift linear infinite;
+}
+
+/* Row 1 – high, small */
+.pxc-1  { top: 4%;  left: 3%;   animation-duration: 50s; }
+.pxc-2  { top: 8%;  left: 25%;  animation-duration: 38s; animation-delay: -8s; }
+.pxc-3  { top: 2%;  left: 42%;  animation-duration: 55s; animation-delay: -20s; }
+.pxc-4  { top: 10%; left: 65%;  animation-duration: 42s; animation-delay: -5s; }
+.pxc-5  { top: 5%;  left: 82%;  animation-duration: 48s; animation-delay: -15s; }
+
+/* Row 2 – mid */
+.pxc-6  { top: 20%; left: 10%;  animation-duration: 45s; animation-delay: -12s; }
+.pxc-7  { top: 18%; left: 35%;  animation-duration: 40s; animation-delay: -3s; }
+.pxc-8  { top: 22%; left: 55%;  animation-duration: 52s; animation-delay: -25s; }
+.pxc-9  { top: 16%; left: 78%;  animation-duration: 36s; animation-delay: -10s; }
+
+/* Row 3 – low, larger */
+.pxc-10 { top: 34%; left: 5%;   animation-duration: 44s; animation-delay: -7s; }
+.pxc-11 { top: 30%; left: 40%;  animation-duration: 50s; animation-delay: -18s; }
+.pxc-12 { top: 36%; left: 70%;  animation-duration: 46s; animation-delay: -2s; }
+
+@keyframes cloudDrift {
+  from { transform: translateX(-200px); }
+  to   { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* ---- Horizon Line ---- */
+.horizon-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.horizon-svg {
+  width: 100%;
+  height: 50px;
+}
+
+/* ---- About Text ---- */
+.about-text {
+  max-width: 900px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-line {
+  display: block;
+  font-size: clamp(24px, 3.8vw, 48px);
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.word {
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.word.highlighted {
+  opacity: 1;
+}
+
+.about-bold   { color: var(--text-dark); }
+.about-medium { color: var(--text-medium); }
+.about-light  { color: var(--text-light); }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 16px 100px;
+    border-radius: 20px 20px 0 0;
+  }
+  .about-line {
+    font-size: clamp(18px, 4.5vw, 30px);
+  }
+}

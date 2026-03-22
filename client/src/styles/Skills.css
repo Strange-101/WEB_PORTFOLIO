@@ -1,0 +1,182 @@
+.skills-section {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 36px 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ---- Experience Counter ---- */
+.exp-counter {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: scale(0.8) translateY(25px);
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.exp-counter.skill-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.exp-number {
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -5px;
+}
+
+.exp-text {
+  font-size: clamp(24px, 4vw, 50px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* ---- Skills Heading ---- */
+.skills-head {
+  font-size: clamp(40px, 8vw, 120px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin-bottom: 60px;
+  line-height: 1;
+}
+
+.skill-char {
+  opacity: 0;
+  transform: translateY(50px) rotateX(45deg);
+  transform-origin: bottom center;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.skills-head.skill-visible .skill-char {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+/* ---- Layout ---- */
+.skills-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 55px;
+  max-width: 950px;
+  margin: 0 auto 60px;
+}
+
+.sticker-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 20px;
+}
+
+.sticker {
+  transition: transform 0.4s ease;
+  animation: stickerFloat 4s ease-in-out infinite;
+}
+
+.sticker:nth-child(2) { animation-delay: -1.5s; }
+.sticker:nth-child(3) { animation-delay: -3s; }
+
+@keyframes stickerFloat {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-5px); }
+}
+
+.sticker:hover {
+  transform: rotate(0deg) scale(1.1) !important;
+}
+
+/* ---- Skill List ---- */
+.ski-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ski-item {
+  font-size: clamp(18px, 2.8vw, 34px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  transition: color 0.3s;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+.ski-bold    { color: var(--text-dark); }
+.ski-medium  { color: var(--text-medium); font-weight: 600; }
+.ski-light   { color: var(--text-light); font-weight: 500; }
+.ski-lighter { color: var(--text-lighter); font-weight: 500; }
+
+.ski-item:hover {
+  color: var(--text-dark) !important;
+}
+
+/* ---- Interests ---- */
+.interests-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  margin-top: 50px;
+  padding-top: 36px;
+  border-top: 1px solid #ccc;
+}
+
+.interest-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-medium);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.interest-box.skill-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.interest-dot {
+  color: #ccc;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 16px 80px;
+  }
+  .skills-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .sticker-col {
+    flex-direction: row;
+    padding-top: 0;
+  }
+  .interests-bar {
+    gap: 20px;
+  }
+  .exp-counter {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .exp-text {
+    text-align: center;
+  }
+}

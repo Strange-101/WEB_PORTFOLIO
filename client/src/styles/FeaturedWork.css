@@ -1,0 +1,322 @@
+.featured-work {
+  position: relative;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 60px 36px 100px;
+  overflow: hidden;
+}
+
+/* ---- Pixel Decorations ---- */
+.pixel-decos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 350px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-decos-lower {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-deco {
+  opacity: 1;
+}
+
+.pixel-bird {
+  animation: birdBob 8s ease-in-out infinite;
+}
+
+@keyframes birdBob {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(18px, -8px);
+  }
+
+  50% {
+    transform: translate(35px, 0);
+  }
+
+  75% {
+    transform: translate(18px, 8px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ---- Section Title ---- */
+.work-title {
+  font-size: 13.5vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 180px;
+  line-height: 0.85;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* ---- Reveal Animation ---- */
+.reveal-el {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-el.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-char {
+  opacity: 0;
+  transform: translateY(50px) rotateX(45deg);
+  transform-origin: bottom center;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.work-title.revealed .title-char {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+/* ---- Project Card Animations ---- */
+.project-reveal {
+  opacity: 0;
+  transform: scale(0.85) translateY(60px);
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-reveal.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ---- Filter Bar ---- */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 16px auto 80px auto;
+  width: fit-content;
+  padding: 24px;
+  border: none;
+  background: #fdfdfd;
+  position: relative;
+  z-index: 2;
+  box-shadow: 
+    0 -8px 0 #CCC,
+    0 8px 0 #CCC,
+    -8px 0 0 #CCC,
+    8px 0 0 #CCC,
+    -4px -4px 0 #CCC,
+    4px -4px 0 #CCC,
+    -4px 4px 0 #CCC,
+    4px 4px 0 #CCC;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  margin: 4px;
+  border: none;
+  background: #EEE;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #333;
+  transition: transform 0.1s ease, background 0.1s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 
+    0 -4px 0 #CCC,
+    0 4px 0 #CCC,
+    -4px 0 0 #CCC,
+    4px 0 0 #CCC,
+    -2px -2px 0 #CCC,
+    2px -2px 0 #CCC,
+    -2px 2px 0 #CCC,
+    2px 2px 0 #CCC;
+}
+
+.filter-pill:hover {
+  background: #DDD;
+}
+
+.filter-pill:active {
+  transform: translate(2px, 2px);
+}
+
+.filter-pill.active {
+  background: #FF4B3A;
+  color: #FFF;
+}
+
+.filter-pill svg {
+  color: #333;
+}
+
+.filter-pill.active svg {
+  color: #FFF;
+}
+
+.filter-pill svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---- Project Grid ---- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px 70px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.project-card {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card-offset {
+  margin-top: 100px;
+}
+
+/* ---- Project Image ---- */
+.project-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 3px solid #222;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+
+.project-img:hover .project-bg {
+  transform: scale(1.06);
+}
+
+.project-icon-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.project-inner-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---- Dither Overlay ---- */
+.dither-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.project-img:hover .dither-overlay {
+  opacity: 0.2;
+}
+
+.project-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .featured-work {
+    padding: 40px 16px 60px;
+  }
+
+  .work-title {
+    margin-top: 80px;
+    font-size: 15vw;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .card-offset {
+    margin-top: 0;
+  }
+
+  .filter-bar {
+    gap: 12px;
+    padding: 16px;
+    margin: 8px auto 60px auto;
+    box-shadow: 
+      0 -6px 0 #CCC,
+      0 6px 0 #CCC,
+      -6px 0 0 #CCC,
+      6px 0 0 #CCC,
+      -3px -3px 0 #CCC,
+      3px -3px 0 #CCC,
+      -3px 3px 0 #CCC,
+      3px 3px 0 #CCC;
+  }
+
+  .filter-pill {
+    padding: 10px 16px;
+    font-size: 11px;
+    margin: 4px;
+    box-shadow: 
+      0 -4px 0 #CCC,
+      0 4px 0 #CCC,
+      -4px 0 0 #CCC,
+      4px 0 0 #CCC,
+      -2px -2px 0 #CCC,
+      2px -2px 0 #CCC,
+      -2px 2px 0 #CCC,
+      2px 2px 0 #CCC;
+  }
+
+  .filter-pill:active {
+    transform: translate(2px, 2px);
+  }
+}

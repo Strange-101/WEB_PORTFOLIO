@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Background -->
+  <rect x="40" y="60" width="720" height="120" fill="black"></rect>
+
+  <!-- TOP BORDER -->
+  <rect x="80" y="40" width="640" height="20" fill="white"></rect>
+
+  <!-- BOTTOM BORDER -->
+  <rect x="80" y="180" width="640" height="20" fill="white"></rect>
+
+  <!-- LEFT SIDE (pixel stepped) -->
+  <rect x="40" y="80" width="20" height="80" fill="white"></rect>
+  <rect x="60" y="60" width="20" height="20" fill="white"></rect>
+  <rect x="60" y="160" width="20" height="20" fill="white"></rect>
+
+  <!-- RIGHT SIDE (pixel stepped) -->
+  <rect x="740" y="80" width="20" height="80" fill="white"></rect>
+  <rect x="720" y="60" width="20" height="20" fill="white"></rect>
+  <rect x="720" y="160" width="20" height="20" fill="white"></rect>
+
+  <!-- TAIL (exact stepped diagonal) -->
+  <rect x="120" y="200" width="20" height="20" fill="white"></rect>
+  <rect x="100" y="220" width="20" height="20" fill="white"></rect>
+  <rect x="80" y="200" width="20" height="20" fill="white"></rect>
+</svg>
