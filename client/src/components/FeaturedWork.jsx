@@ -194,7 +194,7 @@ export default function FeaturedWork({ projects, filters }) {
             <div className="project-img">
               <div className="dither-overlay" style={{ zIndex: 2 }} />
               {project.image ? (
-                <img className="project-img-bg" src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
+                <img className="project-img-bg" src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
               ) : (
                 <div className="project-bg" style={{ background: project.gradient, zIndex: 1 }} />
               )}

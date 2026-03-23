@@ -38,10 +38,10 @@ export default function CV({ cvLink }) {
           <h3 className="cv-title">READY FOR DEPLOYMENT</h3>
           <p className="cv-desc">Download my full resume to see my complete work history, education, and technical qualifications.</p>
           <div className="cv-buttons">
-            <a href="/kunalllGeneralCV.pdf" download="Kunalll_General_CV.pdf" target="_blank" rel="noreferrer" className="cv-download-btn">
+            <a href={`${import.meta.env.BASE_URL}kunalllGeneralCV.pdf`} download="Kunalll_General_CV.pdf" target="_blank" rel="noreferrer" className="cv-download-btn">
               <span className="btn-icon">↓</span> GENERAL CV
             </a>
-            <a href="/KunalSpecialisedCV.pdf" download="Kunal_Specialised_CV.pdf" target="_blank" rel="noreferrer" className="cv-download-btn">
+            <a href={`${import.meta.env.BASE_URL}KunalSpecialisedCV.pdf`} download="Kunal_Specialised_CV.pdf" target="_blank" rel="noreferrer" className="cv-download-btn">
               <span className="btn-icon">↓</span> SPECIALISED CV
             </a>
           </div>

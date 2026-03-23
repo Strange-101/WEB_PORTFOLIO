@@ -52,7 +52,7 @@ export default function Certificates({ certificates }) {
             <div className="cert-img-wrap">
               <div className="dither-overlay" />
               {cert.image ? (
-                <div className="cert-bg" style={{ backgroundImage: `url(${cert.image})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 1 }} />
+                <div className="cert-bg" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${cert.image.replace(/^\//, '')})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 1 }} />
               ) : (
                 <>
                   <div className="cert-bg" />
