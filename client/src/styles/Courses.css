@@ -1,0 +1,137 @@
+.courses-section {
+  position: relative;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 36px;
+  overflow: hidden;
+  border-top: 4px dashed #CCC;
+}
+
+.courses-section .section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13.5vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 0.85;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.courses-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.courses-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 120px;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #000;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.8);
+  margin-bottom: 24px;
+}
+
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.course-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 120px;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #FFF;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.8);
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s ease;
+}
+
+.course-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.course-item:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+}
+
+.course-name {
+  font-weight: 900;
+  font-size: 18px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.course-provider {
+  font-weight: 700;
+  color: #555;
+}
+
+.course-status {
+  text-align: center;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 2px solid #000;
+  background: #EEE;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.course-status.completed {
+  background: #4CAF50;
+  color: #FFF;
+}
+
+.course-status.ongoing {
+  background: #FFCA28;
+  color: #000;
+  border-style: dotted;
+}
+
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 60px 16px;
+  }
+  
+  .courses-section .section-title {
+    font-size: 15vw;
+  }
+
+  .courses-header {
+    display: none; /* Hide headers on small screens */
+  }
+
+  .course-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .course-status {
+    text-align: left;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 8px;
+  }
+}

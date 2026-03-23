@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { PixelTree, PixelLeafTree, PixelFlower, PixelBird } from './PixelDecorations'
 import '../styles/FeaturedWork.css'
 
 const ICONS = {
@@ -54,6 +55,43 @@ const ICONS = {
       <path d="M22 22h8M22 26h8M22 30h8" stroke="#42A5F5" strokeWidth="1.5" strokeDasharray="2,2" />
       <circle cx="15" cy="18" r="2" fill="#42A5F5" />
       <circle cx="37" cy="18" r="2" fill="#42A5F5" />
+    </svg>
+  ),
+  video_board: (
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+      <rect x="6" y="12" width="40" height="28" rx="2" stroke="#fff" strokeWidth="2" />
+      <circle cx="26" cy="12" r="3" fill="#fff" />
+      <path d="M14 20 Q 20 16 26 22 T 38 20" stroke="#4FC3F7" strokeWidth="2" strokeLinecap="round" />
+      <line x1="20" y1="40" x2="32" y2="40" stroke="#fff" strokeWidth="2" />
+      <line x1="26" y1="40" x2="26" y2="44" stroke="#fff" strokeWidth="2" />
+    </svg>
+  ),
+  book_star: (
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+      <path d="M26 40 L26 12 C26 12 20 8 10 10 L10 38 C20 36 26 40 26 40Z" stroke="#fff" strokeWidth="2" fill="none" />
+      <path d="M26 40 L26 12 C26 12 32 8 42 10 L42 38 C32 36 26 40 26 40Z" stroke="#fff" strokeWidth="2" fill="none" />
+      <path d="M26 16 L28 22 H34 L29 26 L31 32 L26 28 L21 32 L23 26 L18 22 H24 Z" fill="#FDD835" />
+    </svg>
+  ),
+  target_list: (
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+      <circle cx="18" cy="26" r="10" stroke="#FF5252" strokeWidth="2" />
+      <circle cx="18" cy="26" r="5" stroke="#FF5252" strokeWidth="2" />
+      <circle cx="18" cy="26" r="1.5" fill="#FF5252" />
+      <rect x="34" y="16" width="12" height="2" fill="#fff" />
+      <rect x="34" y="24" width="12" height="2" fill="#fff" />
+      <rect x="34" y="32" width="8" height="2" fill="#fff" />
+    </svg>
+  ),
+  pin_window: (
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+      <rect x="8" y="14" width="36" height="26" rx="2" stroke="#fff" strokeWidth="2" />
+      <line x1="8" y1="20" x2="44" y2="20" stroke="#fff" strokeWidth="1" />
+      <circle cx="12" cy="17" r="1" fill="#FF5252" />
+      <circle cx="16" cy="17" r="1" fill="#FFCA28" />
+      <circle cx="20" cy="17" r="1" fill="#8BC34A" />
+      <path d="M26 4 L30 14 H22 Z" fill="#E0E0E0" />
+      <line x1="26" y1="14" x2="26" y2="24" stroke="#E0E0E0" strokeWidth="2" />
     </svg>
   ),
 }
@@ -145,21 +183,38 @@ export default function FeaturedWork({ projects, filters }) {
       {/* Project grid */}
       <div className="project-grid">
         {visibleProjects.map((project, i) => (
-          <div
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
             key={project.id}
             className={`project-card project-reveal ${i % 2 !== 0 ? 'card-offset' : ''}`}
-            style={{ transitionDelay: `${i * 0.15}s` }}
+            style={{ transitionDelay: `${i * 0.15}s`, textDecoration: 'none', color: 'inherit', display: 'block' }}
           >
             <div className="project-img">
-              <div className="dither-overlay" />
-              <div className="project-bg" style={{ background: project.gradient }} />
-              <div className="project-icon-wrap">
+              <div className="dither-overlay" style={{ zIndex: 2 }} />
+              {project.image ? (
+                <img className="project-img-bg" src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
+              ) : (
+                <div className="project-bg" style={{ background: project.gradient, zIndex: 1 }} />
+              )}
+              <div className="project-icon-wrap" style={{ zIndex: 3, background: 'rgba(0,0,0,0.6)', padding: '16px', borderRadius: '12px', backdropFilter: 'blur(2px)' }}>
                 {ICONS[project.icon]}
                 <span className="project-inner-label">{project.title}</span>
               </div>
             </div>
-            <h3 className="project-label">{project.title}</h3>
-          </div>
+            <h3 className="project-label">
+              {project.title}
+              {project.githubLink && (
+                <svg 
+                  width="18" height="18" viewBox="0 0 24 24" fill="currentColor" 
+                  style={{ marginLeft: 8, verticalAlign: 'middle', opacity: 0.6 }}
+                >
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              )}
+            </h3>
+          </a>
         ))}
       </div>
 
@@ -191,54 +246,4 @@ function FilterIcon({ type }) {
   }
 }
 
-function PixelTree({ style, size }) {
-  const s = size === 'small' ? 0.65 : 1
-  return (
-    <div className="pixel-deco" style={{ ...style, position: 'absolute' }}>
-      <svg width={50 * s} height={90 * s} viewBox="0 0 50 90" style={{ imageRendering: 'pixelated' }}>
-        <polygon points="25,0 45,25 5,25" fill="#fff" stroke="#000" strokeWidth="3" />
-        <polygon points="25,12 48,40 2,40" fill="#fff" stroke="#000" strokeWidth="3" />
-        <polygon points="25,26 50,55 0,55" fill="#fff" stroke="#000" strokeWidth="3" />
-        <rect x="20" y="55" width="10" height="18" fill="#fff" stroke="#000" strokeWidth="3" />
-      </svg>
-    </div>
-  )
-}
 
-function PixelLeafTree({ style, size }) {
-  const s = size === 'small' ? 0.6 : 1
-  return (
-    <div className="pixel-deco" style={{ ...style, position: 'absolute' }}>
-      <svg width={40 * s} height={90 * s} viewBox="0 0 40 90" style={{ imageRendering: 'pixelated' }}>
-        <ellipse cx="20" cy="25" rx="16" ry="22" fill="#fff" stroke="#000" strokeWidth="3" />
-        <line x1="20" y1="47" x2="20" y2="85" stroke="#000" strokeWidth="3" />
-        <line x1="12" y1="70" x2="20" y2="60" stroke="#000" strokeWidth="2.5" />
-        <line x1="28" y1="65" x2="20" y2="55" stroke="#000" strokeWidth="2.5" />
-      </svg>
-    </div>
-  )
-}
-
-function PixelFlower({ style, color }) {
-  return (
-    <div className="pixel-deco" style={{ ...style, position: 'absolute' }}>
-      <svg width="16" height="16" viewBox="0 0 16 16" style={{ imageRendering: 'pixelated' }}>
-        <rect x="6" y="0" width="4" height="4" fill={color} />
-        <rect x="0" y="6" width="4" height="4" fill={color} />
-        <rect x="12" y="6" width="4" height="4" fill={color} />
-        <rect x="6" y="12" width="4" height="4" fill={color} />
-        <rect x="6" y="6" width="4" height="4" fill="#FFD54F" />
-      </svg>
-    </div>
-  )
-}
-
-function PixelBird({ style, delay }) {
-  return (
-    <div className="pixel-deco pixel-bird" style={{ ...style, position: 'absolute', animationDelay: `${delay}s` }}>
-      <svg width="14" height="10" viewBox="0 0 14 10">
-        <path d="M0,5 Q3.5,0 7,5 Q10.5,0 14,5" stroke="#333" strokeWidth="1.5" fill="none" />
-      </svg>
-    </div>
-  )
-}

@@ -3,6 +3,7 @@ import '../styles/Footer.css'
 
 export default function Footer({ personal }) {
   const [time, setTime] = useState('')
+  const [contactType, setContactType] = useState('collaborate')
   const canvasRef = useRef(null)
   const animRef = useRef(null)
 
@@ -114,24 +115,42 @@ export default function Footer({ personal }) {
             ))}
           </h2>
 
-          {/* Pill buttons */}
-          <div className="footer-buttons">
-            <a href={`mailto:${personal.email}`} className="pill-btn footer-reveal" style={{ transitionDelay: '0.4s' }}>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                <line x1="5" y1="9" x2="13" y2="9" stroke="currentColor" strokeWidth="1.5"/>
-                <line x1="9" y1="5" x2="9" y2="13" stroke="currentColor" strokeWidth="1.5"/>
-              </svg>
-              START A PROJECT
-            </a>
-            <a href={`mailto:${personal.email}`} className="pill-btn footer-reveal" style={{ transitionDelay: '0.5s' }}>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M2 6l7 5 7-5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-              </svg>
-              SAY HI
-            </a>
-          </div>
+          {/* Contact Form */}
+          <form className="footer-contact-form footer-reveal" style={{ transitionDelay: '0.4s' }} action={`mailto:${personal.email}`} method="post" encType="text/plain">
+            <div className="form-toggle">
+              <label>
+                <input type="radio" name="Subject" value="Project Collaboration" checked={contactType === 'collaborate'} onChange={() => setContactType('collaborate')} className="sr-only"/>
+                <span className="pill-btn form-pill">LET'S COLLABORATE</span>
+              </label>
+              <label>
+                <input type="radio" name="Subject" value="Job Inquiry" checked={contactType === 'talk'} onChange={() => setContactType('talk')} className="sr-only" />
+                <span className="pill-btn form-pill">LET'S TALK</span>
+              </label>
+            </div>
+            <div className="form-inputs">
+              <input type="text" name="Name" placeholder="YOUR NAME" required className="form-input" />
+              
+              {contactType === 'collaborate' ? (
+                <>
+                  <input type="text" name="Timeline_Budget" placeholder="TIMELINE / BUDGET (OPTIONAL)" className="form-input" />
+                  <textarea name="Project_Details" placeholder="WHAT ARE WE BUILDING TOGETHER?" required rows="3" className="form-input"></textarea>
+                </>
+              ) : (
+                <>
+                  <input type="text" name="Company" placeholder="COMPANY NAME" required className="form-input" />
+                  <input type="text" name="Role" placeholder="ROLE / POSITION" required className="form-input" />
+                  <textarea name="Message" placeholder="TELL ME ABOUT THE OPPORTUNITY" required rows="3" className="form-input"></textarea>
+                </>
+              )}
+              
+              <button type="submit" className="pill-btn submit-btn">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M2 9L15 2L9 15L7 11L2 9Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                </svg>
+                SEND TRANSMISSION
+              </button>
+            </div>
+          </form>
         </div>
 
         {/* Bottom meta */}

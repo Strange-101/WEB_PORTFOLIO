@@ -18,7 +18,7 @@ export default function Skills({ expertise }) {
       { threshold: 0.1 }
     )
 
-    const items = sectionRef.current?.querySelectorAll('.skills-head, .exp-counter, .interest-box')
+    const items = sectionRef.current?.querySelectorAll('.skills-head, .exp-counter')
     items?.forEach(el => observer.observe(el))
 
     const handleScroll = () => {
@@ -104,16 +104,7 @@ export default function Skills({ expertise }) {
         </div>
       </div>
 
-      {/* Interests */}
-      <div className="interests-bar">
-        {expertise.interests.map((interest, i) => (
-          <div key={i} className="interest-box" style={{ transitionDelay: `${i * 0.1}s` }}>
-            {i > 0 && <span className="interest-dot">•</span>}
-            <InterestIcon type={interest} />
-            <span>{interest}</span>
-          </div>
-        ))}
-      </div>
+
     </section>
   )
 }
@@ -131,19 +122,4 @@ function Sticker({ label, bg, color, rotate }) {
   )
 }
 
-function InterestIcon({ type }) {
-  if (type === 'RUNNING') {
-    return (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="7" r="3.5" stroke="#666" strokeWidth="1.8" />
-        <path d="M10 12l-3 10M18 12l3 10M12 12v8M16 12v8M8 22h4M16 22h4" stroke="#666" strokeWidth="1.8" />
-      </svg>
-    )
-  }
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <circle cx="14" cy="14" r="9" stroke="#666" strokeWidth="1.8" />
-      <path d="M5 14h18M14 5c-3.5 3.5-3.5 14 0 18M14 5c3.5 3.5 3.5 14 0 18" stroke="#666" strokeWidth="1.3" />
-    </svg>
-  )
-}
+

@@ -179,6 +179,93 @@
   opacity: 0.5;
 }
 
+/* ---- Contact Form ---- */
+.footer-contact-form {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.form-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+input[type="radio"]:checked + .form-pill {
+  background: rgba(255, 255, 255, 1);
+  color: var(--bg-dark, #000);
+  border-color: #fff;
+}
+
+.form-pill {
+  cursor: pointer;
+  padding: 12px 24px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 20px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+textarea.form-input {
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  align-self: flex-end;
+  cursor: pointer;
+  padding: 14px 32px;
+}
+
+.submit-btn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .footer {
@@ -194,10 +281,23 @@
   .footer-big-indent {
     padding-left: clamp(30px, 8vw, 60px);
   }
-  .footer-buttons {
-    flex-direction: column;
-    gap: 10px;
+  .footer-contact-form {
     align-items: flex-start;
+    margin-left: 0;
+  }
+  .form-toggle {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .form-pill {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .submit-btn {
+    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
   }
   .pill-btn {
     padding: 10px 22px;

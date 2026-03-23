@@ -1,17 +1,6 @@
-# Retro Pixel-Art Portfolio
+g# Retro Pixel-Art Portfolio
 
 A highly interactive, design-driven personal portfolio built on the MERN stack. Designed with a distinct retro-digital, 8-bit pixel art aesthetic, featuring meticulously crafted CSS animations, scroll scrubbing, and responsive layouts.
-
-## 🌟 Key Features
-
-*   **Pixel Art Aesthetic**: Complete with multi-step 8-bit notched corners, chunky drop shadows, and dithered gradients.
-*   **Dynamic Scroll Animations**: 
-    *   **Staggered Text Reveals**: Headings utilizing custom 3D 'wave' flip animations (`cubic-bezier` bounds).
-    *   **Word-by-Word Highlight**: "About" section text lights up dynamically relative to your scroll position.
-    *   **Elastic Bouncing Cards**: Project cards burst into view with a playful spring-tension arcade scale effect.
-    *   **Scroll-Scrub Lens**: The Skills array acts as a continuous magnifying glass, seamlessly zooming the centered item based on precise viewport scroll coordinates.
-*   **Live Pixel Decor**: Interactive SVG pixel birds looping naturally and an animated pixel-wave transition canvas in the footer.
-*   **MERN Architecture**: Clean separation between the React Vite frontend and the Node/Express JSON API backend serving the portfolio content.
 
 ## 🛠️ Technology Stack
 
