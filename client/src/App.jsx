@@ -98,6 +98,7 @@ function getFallbackData() {
       skills: [
         { name: 'REACT & NODE.JS', weight: 'bold' },
         { name: 'MONGODB & EXPRESS', weight: 'bold' },
+        { name: 'PYTHON, C, C++, JAVA', weight: 'bold' },
         { name: 'MACHINE LEARNING', weight: 'bold' },
         { name: 'DEEP LEARNING', weight: 'medium' },
         { name: 'TENSORFLOW & PYTORCH', weight: 'medium' },
@@ -115,7 +116,7 @@ function getFallbackData() {
       { platform: 'Codolio', rank: 'Verified Gold', problemsSolved: 160, accuracy: '23d Streak', link: 'https://codolio.com/profile/strange' }
     ],
     hackathons: [
-      { id: 1, name: 'Cipherthon 2.0', project: 'Intelligent Hiring Ecosystem', date: '2024', status: 'Participant' },
+      { id: 1, name: 'Cipherthon 2.0', project: 'Intelligent Hiring Ecosystem', date: '2024', status: 'Runner Up' },
       { id: 2, name: 'HackJNU', project: 'Decentralized Voting DApp', date: '2024', status: 'Participant' },
       { id: 3, name: 'Hackmania', project: 'Agricultural E-Commerce Marketplace', date: '2023', status: 'Participant' }
     ],
