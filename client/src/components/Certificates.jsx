@@ -44,8 +44,11 @@ export default function Certificates({ certificates }) {
 
       <div className="cert-grid">
         {certificates.map((cert, i) => (
-          <div
+          <a
             key={cert.id}
+            href={cert.link || (cert.image ? `${import.meta.env.BASE_URL || ''}${cert.image.startsWith('/') ? cert.image.slice(1) : cert.image}` : '#')}
+            target="_blank"
+            rel="noopener noreferrer"
             className="cert-card reveal-el"
             style={{ transitionDelay: `${i * 0.15}s` }}
           >
@@ -69,7 +72,7 @@ export default function Certificates({ certificates }) {
               <p className="cert-issuer">{cert.issuer}</p>
               <p className="cert-date">{cert.date}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

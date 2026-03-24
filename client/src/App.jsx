@@ -128,12 +128,12 @@ function getFallbackData() {
       { id: 6, name: 'Python Programming', provider: 'HCL GUVI', status: 'COMPLETED' }
     ],
     certificates: [
-      { id: 1, name: 'Programming in C++: Hands-on Intro', issuer: 'Codio', date: 'Jun 2024', image: '/images/certs/cert_cpp_codio_1774290355643.png' },
-      { id: 2, name: 'Machine Learning with Python', issuer: 'freeCodeCamp', date: 'Feb 2024', image: '/images/certs/cert_ml_freecodecamp_1774290372970.png' },
-      { id: 3, name: 'Python (Basic)', issuer: 'HackerRank', date: 'Feb 2024', image: '/images/certs/cert_python_hackerrank_1774290390964.png' },
-      { id: 4, name: 'Responsive Web Design', issuer: 'freeCodeCamp', date: 'Oct 2023', image: '/images/certs/cert_rwd_freecodecamp_1774290406585.png' },
-      { id: 5, name: 'TensorFlow Developer Bootcamp', issuer: 'Udemy', date: 'Jan 2024', image: '/images/certs/cert_tensorflow_udemy_1774290422450.png' },
-      { id: 6, name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jan 2024', image: '/images/certs/cert_genai_google_1774290443150.png' }
+      { id: 1, name: 'Programming in C++: Hands-on Intro', issuer: 'Codio', date: 'Jun 2024', image: '/images/certs/original/orig_cpp.jpg', link: 'https://www.coursera.org/account/accomplishments/specialization/RS2TPKD8H4EE' },
+      { id: 2, name: 'Machine Learning with Python', issuer: 'freeCodeCamp', date: 'Feb 2024', image: '/images/certs/original/orig_ml.jpg', link: 'https://freecodecamp.org/certification/fcc75bee798-babb-44ef-adf8-19f0b3b1c137/machine-learning-with-python-v7' },
+      { id: 3, name: 'Python (Basic)', issuer: 'HackerRank', date: 'Feb 2024', image: '/images/certs/original/orig_python.jpg', link: 'https://www.hackerrank.com/certificates/af58d0ef97f2' },
+      { id: 4, name: 'Responsive Web Design', issuer: 'freeCodeCamp', date: 'Oct 2023', image: '/images/certs/original/orig_rwd.jpg', link: 'https://freecodecamp.org/certification/fcc75bee798-babb-44ef-adf8-19f0b3b1c137/responsive-web-design' },
+      { id: 5, name: 'TensorFlow Developer Bootcamp', issuer: 'Udemy', date: 'Jan 2024', image: '/images/certs/original/orig_tf.jpg', link: 'http://ude.my/UC-c727bf2f-4dad-45bb-a8bc-78de99bd22f5' },
+      { id: 6, name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jan 2024', image: '/images/certs/original/orig_genai.jpg', link: 'https://coursera.org/verify/GS65HLEGUACK' }
     ],
     hobbies: {
       strava: { weeklyDist: '45 KM', avgPace: '5:20 /KM', longestRun: '21.1 KM (Half Marathon)' },
