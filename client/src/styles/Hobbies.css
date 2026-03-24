@@ -20,7 +20,7 @@
   padding: 16px 32px;
   font-family: inherit;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   box-shadow: 6px 6px 0 #AAA;
@@ -65,7 +65,7 @@
   border: none;
   font-family: inherit;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   color: #666;
 }
@@ -113,7 +113,7 @@
 
 .hobby-title {
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -133,7 +133,7 @@
 }
 
 .hobby-stats span {
-  font-weight: 900;
+  font-weight: 700;
   color: #666;
   display: block;
   font-size: 11px;

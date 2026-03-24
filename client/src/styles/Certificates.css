@@ -11,8 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10vw;
-  font-weight: 900;
+  font-size: clamp(32px, 7vw, 100px);
+  font-weight: 700;
   letter-spacing: -0.04em;
   color: #000;
   text-align: center;
@@ -110,7 +110,7 @@
 
 .cert-title {
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 8px;
   color: #000;
@@ -135,6 +135,6 @@
     padding: 60px 16px;
   }
   .section-title {
-    font-size: 12vw;
+    font-size: clamp(24px, 10vw, 55px);
   }
 }

@@ -79,7 +79,7 @@
 .about-line {
   display: block;
   font-size: clamp(24px, 3.8vw, 48px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.25;
   text-transform: uppercase;

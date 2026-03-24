@@ -99,7 +99,7 @@
 
 .hack-title {
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -117,7 +117,7 @@
   justify-content: space-between;
   border-top: 2px dashed #CCC;
   padding-top: 12px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hack-status {

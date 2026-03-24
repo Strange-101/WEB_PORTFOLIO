@@ -50,7 +50,7 @@
   transform: translateX(-20px);
 
   color: white;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 3rem;
   letter-spacing: 2px;
 }
@@ -72,7 +72,7 @@
 .hero-name {
   position: relative;
   font-size: clamp(14rem, 20vw, 15rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.92;
   letter-spacing: -4px;
   white-space: nowrap;
@@ -149,7 +149,7 @@
 
 .hero-info {
   font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.15;
   color: #fff;
@@ -163,23 +163,25 @@
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .hero-name {
-    font-size: clamp(36px, 13vw, 80px);
+    font-size: clamp(32px, 10vw, 60px);
     letter-spacing: -1px;
-    gap: 0;
   }
 
   .pixel-character-img {
     width: 140px;
-    margin: 0 -50px;
+    margin: 0 -45px;
+  }
+
+  .speech-bubble-wrap {
+    bottom: 62%;
   }
 
   .speech-bubble {
-    font-size: 14px;
-    padding: 14px 24px;
-  }
-
-  .speech-bubble::after {
-    left: 40px;
+    width: 300px;
+    height: 156px;
+    font-size: 18px;
+    padding: 0;
+    transform: translateX(-15px);
   }
 
   .hero-bottom {
@@ -199,12 +201,22 @@
 
 @media (max-width: 480px) {
   .hero-name {
-    font-size: clamp(28px, 15vw, 55px);
-    gap: 0;
+    font-size: clamp(22px, 8.5vw, 40px);
   }
 
   .pixel-character-img {
     width: 90px;
-    margin: 0 -35px;
+    margin: 0 -25px;
+  }
+
+  .speech-bubble-wrap {
+    bottom: 62%;
+  }
+
+  .speech-bubble {
+    width: 220px;
+    height: 115px;
+    font-size: 14px;
+    transform: translateX(-10px);
   }
 }

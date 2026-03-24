@@ -92,7 +92,7 @@
 .achievement-title {
   color: #000;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
   margin: 0 0 8px 0;
   text-transform: uppercase;
 }
@@ -109,7 +109,7 @@
   display: inline-block;
   color: #FFF;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   background: #000;
   padding: 4px 12px;
   letter-spacing: 1px;

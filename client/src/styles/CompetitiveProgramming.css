@@ -39,7 +39,7 @@
 
 .cp-platform {
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 8px;
   border-bottom: 2px dashed #000;
@@ -55,14 +55,14 @@
 
 .cp-label {
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   color: #666;
   width: 70px;
 }
 
 .cp-val {
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 700;
   color: #000;
 }
 

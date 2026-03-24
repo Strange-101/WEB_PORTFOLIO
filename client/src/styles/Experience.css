@@ -81,7 +81,7 @@
 
 .exp-role {
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 700;
   color: #000;
   margin: 0;
   text-transform: uppercase;
@@ -92,7 +92,7 @@
   color: #FFF;
   padding: 4px 12px;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -100,7 +100,7 @@
   font-size: 16px;
   color: #FC4C02;
   margin: 0 0 20px 0;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .exp-link {

@@ -92,7 +92,7 @@
 
 .footer-big {
   font-size: clamp(44px, 10vw, 140px);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -4px;
 }
