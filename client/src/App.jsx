@@ -137,7 +137,31 @@ function getFallbackData() {
       { id: 6, name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jan 2024', image: '/images/certs/original/orig_genai.jpg', link: 'https://coursera.org/verify/GS65HLEGUACK' }
     ],
     hobbies: {
-      strava: { weeklyDist: '45 KM', avgPace: '5:20 /KM', longestRun: '21.1 KM (Half Marathon)' },
+      strava: { 
+        weeklyDist: '45 KM', 
+        avgPace: '5:20 /KM', 
+        longestRun: '21.1 KM (Half Marathon)',
+        records: [
+          { type: 'HALF MARATHON', count: 3, bestTime: '1:55:00', icon: '🏅' },
+          { type: '10K', count: 4, bestTime: '48:30', icon: '⚡' },
+          { type: '5K', count: 6, bestTime: '23:15', icon: '🔥' }
+        ],
+        raceHistory: [
+          { name: 'Jalandhar Half', distance: 'Half Marathon', time: '1:55:00', location: 'Jalandhar, PB', year: '2024' },
+          { name: 'CT Half Marathon', distance: 'Half Marathon', time: '1:58:30', location: 'Jalandhar, PB', year: '2023' },
+          { name: 'Jaipur Marathon', distance: 'Half Marathon', time: '2:05:15', location: 'Jaipur, RJ', year: '2023' },
+          { name: 'Jalandhar 10K Run', distance: '10K', time: '48:30', location: 'Jalandhar, PB', year: '2024' },
+          { name: 'Indore Marathon 10K', distance: '10K', time: '50:15', location: 'Indore, MP', year: '2023' },
+          { name: 'Udaipur Night Run', distance: '10K', time: '52:00', location: 'Udaipur, RJ', year: '2023' },
+          { name: 'Bhopal Run', distance: '10K', time: '54:30', location: 'Bhopal, MP', year: '2022' },
+          { name: 'Jalandhar 5K', distance: '5K', time: '23:15', location: 'Jalandhar, PB', year: '2024' },
+          { name: 'Gwalior 5K', distance: '5K', time: '24:00', location: 'Gwalior, MP', year: '2023' },
+          { name: 'Jaipur 5K', distance: '5K', time: '24:45', location: 'Jaipur, RJ', year: '2023' },
+          { name: 'Jodhpur Splash 5K', distance: '5K', time: '25:30', location: 'Jodhpur, RJ', year: '2022' },
+          { name: 'Ujjain Run 5K', distance: '5K', time: '26:15', location: 'Ujjain, MP', year: '2022' },
+          { name: 'Kota 5K', distance: '5K', time: '27:00', location: 'Kota, RJ', year: '2022' }
+        ]
+      },
       basketball: { position: 'Point Guard', player: 'Luka Doncic', team: 'Los Angeles Lakers' },
       f1: { team: 'Red Bull Racing', driver: 'Max Verstappen', memorableRace: 'Monaco GP 2024' },
       wrc: { team: 'Toyota Gazoo Racing', car: 'GR Yaris Rally1', dreamRally: 'Rally Finland' }

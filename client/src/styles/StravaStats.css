@@ -187,3 +187,175 @@
   from { opacity: 0; transform: scale(0); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* Records Section Styles */
+.strava-records-container {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.records-title {
+  color: #888;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .records-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.record-card {
+  background: #111;
+  border: 2px solid #333;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.record-card:hover {
+  background: #FC4C02;
+  border-color: #000;
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.record-card:hover .record-type,
+.record-card:hover .record-count,
+.record-card:hover .record-time {
+  color: #000;
+}
+
+.record-icon {
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.5));
+}
+
+.record-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.record-type {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 900;
+  transition: color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.record-count {
+  color: #888;
+  font-size: 10px;
+  font-weight: 800;
+  transition: color 0.2s;
+  letter-spacing: 1px;
+}
+
+.record-time {
+  color: #FC4C02;
+  font-size: 18px;
+  font-weight: 900;
+  transition: color 0.2s;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.record-card:hover .record-time {
+  text-shadow: none;
+}
+
+/* Race History List View */
+.race-history-container {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.race-list {
+  background: #111;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.race-list-header {
+  display: flex;
+  padding: 12px 16px;
+  background: #222;
+  border-bottom: 2px solid #333;
+  color: #888;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.race-list-item {
+  display: flex;
+  padding: 14px 16px;
+  border-bottom: 1px solid #222;
+  transition: all 0.2s ease;
+  align-items: center;
+}
+
+.race-list-item:last-child {
+  border-bottom: none;
+}
+
+.race-list-item:hover {
+  background: #FC4C02;
+  transform: translateX(4px);
+}
+
+.race-list-item:hover span {
+  color: #000;
+}
+
+.race-name {
+  color: #FFF;
+  font-weight: 800;
+  font-size: 14px;
+  flex: 2;
+  transition: color 0.2s;
+}
+
+.race-dist, .race-loc {
+  color: #AAA;
+  font-size: 12px;
+  font-weight: 700;
+  flex: 1;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.race-time {
+  color: #FC4C02;
+  font-weight: 900;
+  font-size: 14px;
+  flex: 1;
+  text-align: right;
+  transition: color 0.2s;
+}
+
+@media (max-width: 600px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}

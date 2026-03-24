@@ -74,6 +74,46 @@ export default function StravaStats({ stats }) {
         </div>
       </div>
 
+      {stats.records && (
+        <div className="strava-records-container">
+          <h4 className="records-title">PERSONAL RECORDS</h4>
+          <div className="records-grid">
+            {stats.records.map((rec, i) => (
+              <div key={i} className={`record-card card-${i}`}>
+                <div className="record-icon">{rec.icon}</div>
+                <div className="record-info">
+                  <span className="record-type">{rec.type}</span>
+                  <span className="record-count">{rec.count} COMPLETED</span>
+                </div>
+                <div className="record-time">{rec.bestTime}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {stats.raceHistory && (
+        <div className="race-history-container">
+          <h4 className="records-title" style={{ marginTop: '20px' }}>RACE HISTORY</h4>
+          <div className="race-list">
+            <div className="race-list-header">
+              <span style={{ flex: 2 }}>EVENT</span>
+              <span className="hide-mobile" style={{ flex: 1 }}>DIST</span>
+              <span className="hide-mobile" style={{ flex: 1 }}>LOC</span>
+              <span style={{ flex: 1, textAlign: 'right' }}>TIME</span>
+            </div>
+            {stats.raceHistory.map((race, i) => (
+              <div key={i} className="race-list-item" style={{ animationDelay: `${i * 0.05}s` }}>
+                <span className="race-name">{race.name}</span>
+                <span className="race-dist hide-mobile">{race.distance}</span>
+                <span className="race-loc hide-mobile">{race.location}</span>
+                <span className="race-time">{race.time}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="strava-graph-container">
         <div className="graph-label">LAST 15 WEEKS PROGRESSION</div>
         <svg className="strava-graph" viewBox="-5 -5 310 110" preserveAspectRatio="none">
