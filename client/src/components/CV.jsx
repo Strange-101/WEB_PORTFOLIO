@@ -10,20 +10,22 @@ export default function CV({ cvLink }) {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed')
+          } else {
+            entry.target.classList.remove('revealed')
           }
         })
       },
       { threshold: 0.2 }
     )
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
+    const cards = sectionRef.current?.querySelectorAll('.reveal-el');
+    if (cards) cards.forEach(card => observer.observe(card));
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section className="cv-section reveal-el" ref={sectionRef} id="cv">
-      <div className="cv-container">
+    <section className="cv-section" ref={sectionRef} id="cv">
+      <div className="cv-container reveal-el">
         <div className="cv-folder-tab">RESUME.EXE</div>
         <div className="cv-content">
           <div className="cv-icon">

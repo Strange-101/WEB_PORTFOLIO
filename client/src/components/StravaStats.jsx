@@ -27,6 +27,8 @@ export default function StravaStats({ stats }) {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
+          } else {
+            entry.target.classList.remove('revealed');
           }
         });
       },

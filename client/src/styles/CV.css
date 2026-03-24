@@ -1,6 +1,6 @@
 .cv-section {
   position: relative;
-  background: #E0E0E0;
+  background-color: var(--bg-light);
   padding: 80px 36px;
   display: flex;
   justify-content: center;
@@ -17,6 +17,14 @@
   box-shadow: 8px 8px 0 #000;
   position: relative;
   margin-top: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cv-container.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cv-folder-tab {

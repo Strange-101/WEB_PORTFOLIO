@@ -1,6 +1,6 @@
 .experience-section {
   position: relative;
-  background: #FFF;
+  background: var(--bg-light);
   color: #000;
   padding: 80px 36px;
   overflow: hidden;
