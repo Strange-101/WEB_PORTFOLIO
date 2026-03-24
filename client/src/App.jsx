@@ -10,6 +10,8 @@ import Courses from './components/Courses'
 import CV from './components/CV'
 import CompetitiveProgramming from './components/CompetitiveProgramming'
 import Hackathons from './components/Hackathons'
+import Achievements from './components/Achievements'
+import Experience from './components/Experience'
 import Hobbies from './components/Hobbies'
 import BackgroundDecorations from './components/BackgroundDecorations'
 import './App.css'
@@ -43,8 +45,10 @@ function App() {
       <Hero personal={data.personal} />
       <About about={data.about} />
       <Skills expertise={data.expertise} />
+      <Experience experience={data.experience} />
       <FeaturedWork projects={data.projects} filters={data.filters} />
       <CompetitiveProgramming stats={data.cpStats} />
+      <Achievements achievements={data.achievements} />
       <Hackathons hackathons={data.hackathons} />
       <Courses courses={data.courses} />
       <Certificates certificates={data.certificates} />
@@ -86,6 +90,20 @@ function getFallbackData() {
       { id: 5, title: 'RECOMMENDATION ENGINE', category: ['aiml'], image: '/images/recommender_bg_1774287430803.png', icon: 'brain', githubLink: 'https://github.com/Strange-101/MERN_PEP' },
       { id: 6, title: 'WINDOW PIN', category: ['devops'], image: '/images/window_pin_bg_1774287451832.png', icon: 'pin_window', githubLink: 'https://github.com/Strange-101/WindowPin' },
     ],
+    experience: [
+      {
+        id: 1,
+        company: 'SWASTA',
+        link: 'Swasta.life',
+        role: 'Freelance Developer',
+        duration: "Jun '25 – July '25",
+        bullets: [
+          'Completed a freelancing project for a startup company.',
+          'Created a robust experience for clients using the website for therapy and healthcare related consulting.',
+          'Gained practical experience with end-to-end coding workflows, including version control, debugging strategies, and competitive-programming-style problem solving — enabling independent development of efficient algorithmic solutions from scratch.'
+        ]
+      }
+    ],
     filters: [
       { id: 'all', label: 'ALL' },
       { id: 'mern', label: 'MERN' },
@@ -114,6 +132,10 @@ function getFallbackData() {
       { platform: 'CodeChef', rank: 'Bronze Badge', problemsSolved: 81, accuracy: '65%', link: 'https://www.codechef.com/users/s_trang_e' },
       { platform: 'LeetCode', rank: 'Beginner', problemsSolved: 50, accuracy: '70%', link: 'https://leetcode.com/u/strange_/' },
       { platform: 'Codolio', rank: 'Verified Gold', problemsSolved: 160, accuracy: '23d Streak', link: 'https://codolio.com/profile/strange' }
+    ],
+    achievements: [
+      { id: 1, title: 'Published Research Paper', description: 'Co-authored and published a research paper in a recognized mathematical/scientific journal.', icon: '📜', date: '2024' },
+      { id: 2, title: 'IMO Silver Medalist', description: 'Won a Silver Medal in the International Mathematical Olympiad (IMO), showcasing advanced problem-solving skills.', icon: '🥈', date: '2022' }
     ],
     hackathons: [
       { id: 1, name: 'Cipherthon 2.0', project: 'Intelligent Hiring Ecosystem', date: '2024', status: 'Runner Up' },
