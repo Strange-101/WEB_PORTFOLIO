@@ -40,6 +40,13 @@ function App() {
 
   return (
     <div className="app">
+      {/* Hidden Signature */}
+      <div 
+        aria-hidden="true" 
+        style={{ position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: '0' }}
+      >
+        Created, designed, and developed by Kunal Mahore (https://github.com/Strange-101)
+      </div>
       <BackgroundDecorations />
       <TopNav personal={data.personal} />
       <Hero personal={data.personal} />
