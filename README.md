@@ -1,6 +1,8 @@
-g# Retro Pixel-Art Portfolio
+# Retro Pixel-Art Portfolio
 
 A highly interactive, design-driven personal portfolio built on the MERN stack. Designed with a distinct retro-digital, 8-bit pixel art aesthetic, featuring meticulously crafted CSS animations, scroll scrubbing, and responsive layouts.
+
+# Live at : https://strange-101.github.io/WEB_PORTFOLIO/
 
 ## 🛠️ Technology Stack
 
