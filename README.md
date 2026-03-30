@@ -2,9 +2,9 @@
 
 A highly interactive, design-driven personal portfolio built on the MERN stack. Designed with a distinct retro-digital, 8-bit pixel art aesthetic, featuring meticulously crafted CSS animations, scroll scrubbing, and responsive layouts.
 
-# Live at : https://strange-101.github.io/WEB_PORTFOLIO/
+## Live at : https://strange-101.github.io/WEB_PORTFOLIO/
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 **Frontend:**
 *   React (Vite)
@@ -14,7 +14,7 @@ A highly interactive, design-driven personal portfolio built on the MERN stack. 
 *   Node.js
 *   Express.js
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 *   Node.js (v16+)
@@ -45,20 +45,6 @@ A highly interactive, design-driven personal portfolio built on the MERN stack. 
     ```
     *The client runs on your local Vite port (usually `5173`).*
 
-## 📁 Project Structure
-
-```text
-Portfolio2/
-├── client/                 # React Frontend (Vite)
-│   ├── src/
-│   │   ├── components/     # React functional elements (Hero, About, Skills, etc.)
-│   │   ├── styles/         # Discrete component-level CSS logic
-│   │   └── App.jsx         # Root app assembly & fallback data
-│   └── package.json
-└── server/                 # Express Backend API
-    ├── index.js            # Main backend entry point providing JSON REST API
-    └── package.json
-```
 
 ## 📬 Contact & Links
 - **GitHub**: [Strange-101](https://github.com/Strange-101)
